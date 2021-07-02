@@ -24,9 +24,9 @@
     width: 100%;
 }
 
-.canvas
+canvas
 {
-    background-color: rgb(143, 240, 78);
+    border-color: rgb(143, 240, 78);
     border-radius: 25px;
-    box-shadow: 5px 5px 5px greenyellow;
+    box-shadow: 5px 5px 15px greenyellow;
 }
