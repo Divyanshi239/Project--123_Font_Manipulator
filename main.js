@@ -1,3 +1,9 @@
+noseX = 0;
+noseY = 0;
+
+leftWristX = 0;
+rightWristX = 0;
+difference = 0;
 function setup()
 {
     video = createCapture(VIDEO);
@@ -14,6 +20,9 @@ function setup()
 function draw()
 {
     background("#FFAF8A")
+    textSize(difference);
+    fill("purple");
+    text("Divyanshi", noseX, noseY);
 }
 
 function modelLoaded()
@@ -26,5 +35,13 @@ function gotPoses(results)
     if(results.length > 0)
     {
         console.log(results);
+        noseX = results[0].pose.nose.x;
+        noseY = results[0].pose.nose.y
+        console.log("Nose X = " + noseX + "   Nose Y = " + noseY);
+
+        leftWristX = results[0].pose.leftWrist.x;
+        rightWristX = results[0].pose.rightWrist.x;
+        difference = leftWristX - rightWristX;
+        console.log(difference);
     }
 }
